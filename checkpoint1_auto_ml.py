@@ -245,10 +245,10 @@ else:
  
         predictions = predict_model(model, data = df, raw_score = True)
  
-        with st.expander('Visualizar dados:', expanded = False):
-            st.dataframe(df.head())
+    with st.expander('Visualizar dados:', expanded = False):
+        st.dataframe(df.head())
  
-        with st.expander('Visualizar Predições:', expanded = False):
+    with st.expander('Visualizar Predições:', expanded = False):
  
             c1, _, c2, c3 = st.columns([2,.5,1,1])
  
@@ -284,4 +284,3 @@ else:
          
             csv = predictions.to_csv(sep = ';', decimal = ',', index = True)
             st.download_button(label = 'Download', data = csv, file_name = 'predictions.csv', mime = 'text/csv')
- 
